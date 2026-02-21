@@ -1,10 +1,20 @@
 name = "nacpa-dinner"
-type = "javascript"
+main = "src/index.js"
 compatibility_date = "2026-02-21"
+
+[env.production]
+route = "nacpa-dinner.pages.dev/*"
+zone_id = ""
 
 [build]
 command = ""
-cwd = "."
 
-[env.production]
-routes = []
+[build.upload]
+format = "service-worker"
+
+[[assets.bindings]]
+name = "ASSETS"
+type = "service-worker"
+
+[assets]
+directory = "."
